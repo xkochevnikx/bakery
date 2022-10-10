@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <!--! header start -->
+    <header>
+      <nav>
+        <div class="header__box">
+          <div class="header__box_logo">
+            <a href="#"
+              ><img
+                src="https://avatars.mds.yandex.net/i?id=2a0000017a0bfec2b5ee4e3fcae14eb39c71-4342938-images-thumbs&n=13"
+                alt=""
+              />
+            </a>
+          </div>
+          <ol class="header__box_navbar_list">
+            <li><a href="#">Мы</a></li>
+            <li><a href="#">Выпечка</a></li>
+            <li><a href="#">Партнёры</a></li>
+            <li><a href="#">Контакты</a></li>
+          </ol>
+          <div class="header__search">
+            <input id="inpSearch" type="text" placeholder="найти буличку" />
+            <br />
+            <input id="adminBtn" type="button" value="A" />
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!--? header end -->
+    <!-- ! prevNextBtn -->
+    <div class="prevNextBtn">
+      <button id="btnPrev">назад</button>
+      <button id="btnNext">следующая страница</button>
+    </div>
+    <!-- ! prevNextBtn END-->
+    <!--! section start -->
+    <section>
+      <div class="section__box"></div>
+    </section>
+    <!--? section end -->
+    <!--! section admin start -->
+    <div class="section__admin">
+      <div class="create__box">
+        <div class="create__box_shadow">
+          <input id="inpName" type="text" placeholder="название" />
+          <input id="inpImg" type="url" placeholder="изображение" />
+          <input id="inpDescription" type="text" placeholder="описание" />
+          <input id="inpPrice" type="number" placeholder="цена" />
+        </div>
+        <button id="btnCreate">создать</button>
+      </div>
+    </div>
+    <!--? section admin end -->
+    <!--! section READ -->
+    <div class="main_modal">
+      <div class="modal">
+        <button id="btnReadClose">закрыть</button>
+        <input id="inpReadName" type="text" />
+        <input id="inpReadImg" type="url" />
+        <input id="inpReadDescr" type="text" />
+        <input id="inpReadPrice" type="number" />
+        <button id="btnReadSave">сохранить</button>
+      </div>
+    </div>
+    <!--? section READ END-->
+    <!--! section product overview -->
+    <div class="main_product_modal">
+      <div class="product_modal"></div>
+    </div>
+    <!--? section product overview END-->
+
+    <script src="./js/main.js"></script>
+  </body>
+</html>
