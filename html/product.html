@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
+    />
+    <link rel="stylesheet" href="../css/product.css" />
+  </head>
+  <body>
+    <!--! header start -->
+    <div class="container">
+      <header>
+        <nav>
+          <div class="header__box">
+            <div class="header__box_logo">
+              <a href="index.html"><img src="../img/logo2.webp" alt="" /> </a>
+            </div>
+            <ol class="header__box_navbar_list">
+              <li><a href="index.html">О хлебопёке</a></li>
+              <li><a href="product.html">Мы печём</a></li>
+              <li><a href="control.html">Контроль качества</a></li>
+            </ol>
+            <div class="header__search">
+              <input id="inpSearch" type="text" placeholder="найти буличку" />
+              <br />
+              <span id="adminBtn" class="material-symbols-outlined">
+                account_circle
+              </span>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <!--? header end -->
+
+      <!-- ! prevNextBtn -->
+      <div class="prevNextBtn">
+        <button id="btnPrev">назад</button>
+        <button id="btnNext">следующая страница</button>
+      </div>
+      <!-- ? prevNextBtn END-->
+
+      <!-- ! filter start -->
+      <form>
+        <input type="radio" value="хлеб" name="булки" />
+        <label for="хлеб">хлебушек</label>
+        <br />
+        <input type="radio" value="выпечка" name="булки" />
+        <label for="выпечка">выпечка</label>
+        <br />
+        <input type="radio" value="десерты" name="булки" />
+        <label for="десерты">десерты</label>
+        <br />
+        <input type="radio" value="all" name="булки" />
+        <label for="all">вся выпечка</label>
+      </form>
+      <!-- ? filter END -->
+
+      <!--! section start -->
+      <section>
+        <div class="section__box"></div>
+      </section>
+      <!--? section end -->
+
+      <!--! section admin start -->
+      <div class="section__admin">
+        <div class="create__box">
+          <div class="create__box_shadow">
+            <input id="inpName" type="text" placeholder="название" />
+            <input id="inpImg" type="url" placeholder="изображение" />
+            <input id="inpDescription" type="text" placeholder="описание" />
+            <input id="inpPrice" type="number" placeholder="цена" />
+            <input id="inpCategory" type="text" placeholder="категория" />
+          </div>
+          <button id="btnCreate">создать</button>
+        </div>
+      </div>
+      <!--? section admin end -->
+
+      <!--! section READ -->
+      <div class="main_modal">
+        <div class="modal">
+          <button id="btnReadClose">закрыть</button>
+          <input id="inpReadName" type="text" />
+          <input id="inpReadImg" type="url" />
+          <input id="inpReadDescr" type="text" />
+          <input id="inpReadPrice" type="number" />
+          <input id="inpReadCategory" type="text" />
+          <button id="btnReadSave">сохранить</button>
+        </div>
+      </div>
+      <!--? section READ END-->
+
+      <!--! section product overview -->
+      <div class="main_product_modal">
+        <div class="product_modal"></div>
+      </div>
+      <!--? section product overview END-->
+
+      <!--! Footer start -->
+      <footer>
+        <div class="footer__box">
+          <div class="footer__box_content">
+            <div class="footer__box_icon">
+              <a href="#"
+                ><img class="footer_icon" src="../img/chit.svg" alt=""
+              /></a>
+              <a href="#"
+                ><img class="footer_icon" src="../img/vk.svg" alt=""
+              /></a>
+              <a href="#"
+                ><img class="footer_icon" src="../img/tlg.svg" alt=""
+              /></a>
+            </div>
+            <div class="footer__box_title">
+              © ООО «Корпорация Хлебoпёк» Все права защищены 2022
+              <a href="#">Правила пользования сайтом ©</a>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!--? Footer END -->
+    </div>
+
+    <script src="../js/main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,136 @@
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+/* ! header  */
+.header__box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 70px;
+  width: 100%;
+  font-family: "Amatic SC", cursive;
+  font-weight: 700;
+}
+
+.header__box_logo img {
+  height: 60px;
+  cursor: pointer;
+}
+
+.header__box_navbar_list {
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  font-size: 28px;
+  width: 35%;
+}
+
+.header__box_navbar_list a {
+  text-decoration: none;
+  color: black;
+}
+
+.header__search {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.header__search input[type="text"] {
+  padding: 10px;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  font-family: "Amatic SC", cursive;
+  font-size: 20px;
+}
+
+#adminBtn {
+  border-radius: 50%;
+  margin-left: 10px;
+}
+
+.material-symbols-outlined {
+  font-size: 40px;
+  color: orange;
+}
+
+/* !Header END */
+
+/* ! maps */
+
+/* ! maps END*/
+
+.maps__box {
+  display: flex;
+  justify-content: center;
+}
+
+#maps {
+  margin-top: 100px;
+  width: 800px;
+  height: 350px;
+  border: 2px solid orange;
+}
+/*! footer start */
+
+.footer__box {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 250px;
+  font-family: "Balsamiq Sans", cursive;
+  background-color: rgba(150, 150, 150, 0.2);
+}
+
+.footer__box_content {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.footer__box_icon {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.footer_icon {
+  width: 50px;
+  height: 50px;
+}
+.footer_icon:hover {
+  filter: sepia(1);
+}
+
+.footer__box_title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  text-decoration: none;
+}
+
+.footer__box_title a {
+  text-decoration: none;
+  color: black;
+}
+
+/*! footer END*/

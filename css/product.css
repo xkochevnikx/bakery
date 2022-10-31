@@ -1,28 +1,40 @@
-@import url("https://fonts.googleapis.com/css2?family=Peralta&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@400;700&display=swap");
 
 * {
-  cursor: pointer;
-  font-family: "Peralta", cursive;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 /* ! header  */
 .header__box {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background-color: white;
   display: flex;
   justify-content: space-around;
   align-items: center;
-  height: 100px;
+  height: 70px;
+  width: 100%;
+  font-family: "Amatic SC", cursive;
+  font-weight: 700;
 }
 
 .header__box_logo img {
-  height: 150px;
+  height: 60px;
+  cursor: pointer;
 }
 
 .header__box_navbar_list {
   display: flex;
   list-style: none;
   justify-content: space-between;
-  font-size: 20px;
-  width: 30%;
+  font-size: 28px;
+  width: 35%;
 }
 
 .header__box_navbar_list a {
@@ -34,15 +46,26 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
-.header__search input {
-  font-family: "Peralta", cursive;
+.header__search input[type="text"] {
+  padding: 10px;
+  border: 0;
+  border-radius: 5px;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  font-family: "Amatic SC", cursive;
+  font-size: 20px;
 }
 
 #adminBtn {
   border-radius: 50%;
   margin-left: 10px;
+}
+
+.material-symbols-outlined {
+  font-size: 40px;
+  color: orange;
 }
 
 /* ! header END */
@@ -51,7 +74,8 @@
 
 .prevNextBtn {
   text-align: center;
-  margin-top: 15px;
+  margin-top: 105px;
+  font-family: "Balsamiq Sans", cursive;
 }
 
 #btnPrev,
@@ -60,9 +84,29 @@
   border-radius: 5px;
   border: solid 0.5px black;
   font-size: 11px;
+  cursor: pointer;
 }
 
 /* ! prevNextBtn END */
+
+/* ! ========== Filter Start ======== */
+
+form {
+  margin-top: 35px;
+  display: flex;
+  justify-content: center;
+  font-family: "Balsamiq Sans", cursive;
+}
+form input {
+  margin-left: 40px;
+  margin-right: 10px;
+  cursor: pointer;
+}
+form label {
+  font-size: 18px;
+}
+
+/* ? ========== Filter End ======== */
 
 /* ! section  */
 
@@ -70,27 +114,42 @@ section {
   display: flex;
   margin-top: 50px;
   justify-content: center;
+  font-family: "Balsamiq Sans", cursive;
 }
 
 .section__box {
   width: 80%;
   display: flex;
   justify-content: space-evenly;
-  flex-wrap: wrap;
 }
 
 .section__box_card {
+  height: 400px;
   width: 30%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   align-items: center;
   border: 1px solid black;
   margin-bottom: 30px;
   box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.75);
   border-radius: 5px;
+  text-align: center;
+  gap: 10px;
+}
+
+.card_image {
+  width: 250px;
+  height: 150px;
+  border-radius: 5px;
+}
+
+.section__box_card h2 {
+  margin-top: 20px;
 }
 
 .card_description {
+  width: 80%;
   font-size: 16px;
 }
 
@@ -102,13 +161,13 @@ section {
 }
 
 .card_delete {
-  width: 50px;
-  height: 50px;
+  width: 25px;
+  height: 25px;
 }
 
 .card_edit {
-  width: 50px;
-  height: 50px;
+  width: 25px;
+  height: 25px;
 }
 
 .btnProduct {
@@ -194,3 +253,52 @@ section {
 .main_modal_close {
   margin-top: 30px;
 }
+
+/*! footer start */
+
+.footer__box {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 250px;
+  font-family: "Balsamiq Sans", cursive;
+  background-color: rgba(150, 150, 150, 0.2);
+}
+
+.footer__box_content {
+  margin-top: 50px;
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.footer__box_icon {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+}
+
+.footer_icon {
+  width: 50px;
+  height: 50px;
+}
+.footer_icon:hover {
+  filter: sepia(1);
+}
+
+.footer__box_title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 25px;
+  text-decoration: none;
+}
+
+.footer__box_title a {
+  text-decoration: none;
+  color: black;
+}
+
+/*! footer END*/

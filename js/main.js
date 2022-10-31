@@ -6,6 +6,7 @@ let inpName = document.querySelector("#inpName");
 let inpImg = document.querySelector("#inpImg");
 let inpDesc = document.querySelector("#inpDescription");
 let inpPrice = document.querySelector("#inpPrice");
+let inpCategory = document.querySelector("#inpCategory");
 let btnCreate = document.querySelector("#btnCreate");
 let sectionBox = document.querySelector(".section__box");
 
@@ -14,6 +15,7 @@ let inpReadName = document.querySelector("#inpReadName");
 let inpReadImg = document.querySelector("#inpReadImg");
 let inpReadDesc = document.querySelector("#inpReadDescr");
 let inpReadPrice = document.querySelector("#inpReadPrice");
+let inpReadCategory = document.querySelector("#inpReadCategory");
 let btnReadSave = document.querySelector("#btnReadSave");
 let btnReadClose = document.querySelector("#btnReadClose");
 let mainModal = document.querySelector(".main_modal");
@@ -40,25 +42,11 @@ let currentPage = 1;
 let btnPrev = document.querySelector("#btnPrev");
 let btnNext = document.querySelector("#btnNext");
 
-// //! создаём форму проверки админа
+//? Фильтрация
+let form = document.getElementsByTagName("form")[0];
+let category = "all";
 
-// function adminPanel() {
-//   if (pinCode !== "svyat") {
-//     setTimeout(() => {
-//       for (let i of adminBox) {
-//         i.style.display = "none";
-//       }
-//       createBox.style.display = "none";
-//     }, 60);
-//   } else {
-//     setTimeout(() => {
-//       for (let i of adminBox) {
-//         i.style.display = "block";
-//       }
-//       createBox.style.display = "block";
-//     }, 60);
-//   }
-// }
+// //! создаём форму проверки админа
 
 function adminPanel() {
   if (pinCode !== "svyat") {
@@ -102,7 +90,8 @@ btnCreate.addEventListener("click", () => {
     !inpName.value.trim() ||
     !inpImg.value.trim() ||
     !inpDesc.value.trim() ||
-    !inpPrice.value.trim()
+    !inpPrice.value.trim() ||
+    !inpCategory.value.trim()
   ) {
     alert("Заполните все поля!");
     return;
@@ -113,6 +102,7 @@ btnCreate.addEventListener("click", () => {
     img: inpImg.value,
     description: inpDesc.value,
     price: inpPrice.value,
+    category: inpCategory.value,
   };
   //? передаём его в параметр функции создания
   createProduct(createObj);
@@ -121,6 +111,7 @@ btnCreate.addEventListener("click", () => {
   inpImg.value = "";
   inpDesc.value = "";
   inpPrice.value = "";
+  inpCategory.value = "";
 });
 
 //! создаём функцию отображения
@@ -128,7 +119,10 @@ function readProduct() {
   //? ?q=${searchValue} - это по сути фильтр реализованный в нашем файле json
   //? &_page=${currentPage} - это счётчик страниц в нашем json
   //? &_limit=6& - это лимит элементов массива выводимых на одной странице
-  fetch(`${API}?q=${searchValue}&_page=${currentPage}&_limit=3&`)
+  fetch(`${API}?q=${searchValue}&_page=${currentPage}&_limit=3&${
+    category === "all" ? "" : "category=" + category
+  }
+  `)
     .then(elem => elem.json()) //? elem тут это "массив" объектов мы принимаем его и переводим из формата json в состояние массива
     .then(item => {
       //? тут мы перебираем массив и достаём объекты
@@ -210,6 +204,7 @@ function editProduct(id) {
       inpReadImg.value = product.img;
       inpReadDesc.value = product.description;
       inpReadPrice.value = product.price;
+      inpReadCategory.value = product.category;
       editId = product.id;
     });
 }
@@ -226,7 +221,8 @@ btnReadSave.addEventListener("click", () => {
     !inpReadName.value.trim() ||
     !inpReadImg.value.trim() ||
     !inpReadDesc.value.trim() ||
-    !inpReadPrice.value.trim()
+    !inpReadPrice.value.trim() ||
+    !inpReadCategory.value.trim()
   ) {
     alert("Заполните все поля!");
     return;
@@ -237,6 +233,7 @@ btnReadSave.addEventListener("click", () => {
     img: inpReadImg.value,
     description: inpReadDesc.value,
     price: inpReadPrice.value,
+    category: inpReadCategory.value,
   };
   //? передаём его в параметр функции создания
   editReadProduct(editId, createReadObj);
@@ -307,3 +304,12 @@ btnNext.addEventListener("click", () => {
   currentPage++;
   readProduct();
 });
+
+// ! filter start ====
+
+form.addEventListener("click", e => {
+  category = e.target.value;
+  readProduct();
+});
+
+// ? filter END ==============
